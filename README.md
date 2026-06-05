@@ -29,3 +29,25 @@ ruby polyquine.c
 
 # Perl
 perl polyquine.c
+```
+## Verify it
+
+```bash
+# C
+gcc polyquine.c -o polyquine && ./polyquine | diff - polyquine.c
+
+# C++
+g++ polyquine.c -o polyquine && ./polyquine | diff - polyquine.c
+
+# Python
+python polyquine.c | diff - polyquine.c
+
+# Lua
+lua polyquine.c | diff - polyquine.c
+
+# Ruby
+ruby polyquine.c | diff - polyquine.c
+
+# Perl
+perl polyquine.c | diff - polyquine.c
+```

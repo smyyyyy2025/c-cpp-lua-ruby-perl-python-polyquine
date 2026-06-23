@@ -23,49 +23,26 @@ A polyglot quine that prints its own source code, valid in:
 ## Run it
 
 ```bash
-# C
-gcc -std=c99 polyquine.c -o polyquine && ./polyquine
-
-# C++ (all warnings disabled)
-g++ -std=c++11 -w polyquine.c -o polyquine && ./polyquine
-
-# Python
-python3 polyquine.c
-
-# Lua
-lua polyquine.c
-
-# Ruby
-ruby polyquine.c
-
-# Perl
-perl polyquine.c
+gcc -std=c99 polyquine.c -o polyquine && ./polyquine     # C
+g++ -std=c++11 -w polyquine.c -o polyquine && ./polyquine # C++
+python3 polyquine.py     # Python
+lua polyquine.lua        # Lua
+ruby polyquine.rb        # Ruby
+perl polyquine.pl        # Perl
 ```
 
 ## Verify it
 
-No output means the quine is correct.
+No output means the quine is correct. All files share identical content.
 
 ```bash
-# Verify all 6 languages with one command
 gcc -std=c99 polyquine.c -o polyquine && ./polyquine | diff - polyquine.c && echo "[OK] C"
 g++ -std=c++11 -w polyquine.c -o polyquine && ./polyquine | diff - polyquine.c && echo "[OK] C++"
-python3 polyquine.c | diff - polyquine.c && echo "[OK] Python"
-lua polyquine.c | diff - polyquine.c && echo "[OK] Lua"
-ruby polyquine.c | diff - polyquine.c && echo "[OK] Ruby"
-perl polyquine.c | diff - polyquine.c && echo "[OK] Perl"
+python3 polyquine.py | diff - polyquine.c && echo "[OK] Python"
+lua polyquine.lua | diff - polyquine.c && echo "[OK] Lua"
+ruby polyquine.rb | diff - polyquine.c && echo "[OK] Ruby"
+perl polyquine.pl | diff - polyquine.c && echo "[OK] Perl"
 ```
 
-Or one language at a time:
-
-```bash
-gcc -std=c99 polyquine.c -o polyquine && ./polyquine | diff - polyquine.c   # C
-g++ -std=c++11 -w polyquine.c -o polyquine && ./polyquine | diff - polyquine.c   # C++
-python3 polyquine.c | diff - polyquine.c   # Python
-lua polyquine.c | diff - polyquine.c       # Lua
-ruby polyquine.c | diff - polyquine.c      # Ruby
-perl polyquine.c | diff - polyquine.c      # Perl
-```
-
-> The `-w` flag disables all C++ compilation warnings. The C and C++ steps compile to the same `polyquine` binary.
+> The `-w` flag disables all C++ compilation warnings. C and C++ compile to the same binary. Each `.py` `.lua` `.rb` `.pl` file is byte-for-byte identical to `polyquine.c`.
 

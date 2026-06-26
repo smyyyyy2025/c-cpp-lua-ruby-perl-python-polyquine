@@ -20,6 +20,7 @@ A **593-byte, 6-line** polyglot quine that prints its own source code, valid in:
 | Lua | 5.1 | 5.4.4 |
 | Ruby | 2.0 | 3.0.2 |
 | Perl | 5.6 | 5.34.0 |
+| PHP | — | — |
 
 ## Run it
 
@@ -47,5 +48,5 @@ perl polyquine.pl | diff - polyquine.c && echo "[OK] Perl"
 php polyquine.php | diff - polyquine.c && echo "[OK] PHP"
 ```
 
-> The `-w` flag disables all C++ compilation warnings. C and C++ compile to the same binary. Each `.py` `.lua` `.rb` `.pl` file is byte-for-byte identical to `polyquine.c`.
+> The `-w` flag disables all C++ compilation warnings. C and C++ compile to the same binary. Each `.py` `.lua` `.rb` `.pl` `.php` file is byte-for-byte identical to `polyquine.c`.
 

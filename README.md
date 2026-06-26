@@ -20,6 +20,7 @@ A **562-byte, 7-line** polyglot quine ([6-line variant →](6-line/)) that print
 | Lua | 5.1 | 5.4.4 |
 | Ruby | 2.0 | 3.0.2 |
 | Perl | 5.6 | 5.34.0 |
+| PHP | — | — |
 
 ## Run it
 
